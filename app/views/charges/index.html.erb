@@ -11,15 +11,20 @@
 
 </head>
 <body class="landing-page sidebar-collapse">
-  
+  <nav class="navbar  navbar-color-on-scroll fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
+      <div class="container">
+          <div class="navbar-translate">
+              <strong><%= link_to "atRest", root_path, :style =>"text-decoration: none; color: black;", :class => "navbar-brand" %></strong>
+          </div>
+      </div>
+  </nav>
 
    <div class="page-header header-filter" data-parallax="true" style="background-image: url('./assets/profile_city.jpg');" >
     <div class="container">
         <div class="row">
       <div class="col-md-6">
-        <h1>at<strong>Rest</strong></h1>
-        <h2 class="title">Peer-to-Peer Housing First.</h2>
-                <h4>We bring the sharing economy to practical use. With atRest, you can house your friends safely with donations.</h4>
+        <h1 class="title">Peer-to-Peer Housing First.</h1>
+                <h4 >We bring the sharing economy to practical use. With atRest, you can house your friends safely with donations.</h4>
                 <br>
                 <!-- signup for newsletter here -->
                 <button class="btn" style="background-color: green; color:white;"><%= link_to "Support Now", new_charge_path, :style=>"text-decoration: none; color:white;" %><div class="ripple-container"></div></button>
