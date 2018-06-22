@@ -1,0 +1,111 @@
+<body >
+   <nav class="navbar navbar-default fixed-top navbar-expand-lg" color-on-scroll="100" id="sectionsNav">
+      <div class="container">
+          <div class="navbar-translate">
+              <%= link_to "atRest", root_path, :style =>"text-decoration: none; color: black;", :class => "navbar-brand" %>
+          </div>
+      </div>
+    </nav>
+    <div class="container"><br><Br><Br><Br></div>
+<div class="container">
+      <div class="card-deck mb-3 text-center">
+        <div class="card mb-4 box-shadow"><br><br>
+          <div style="background-color: white;">
+            <h4 class="my-0 font-weight-normal">Coffee</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">$5 <small class="text-muted">/ one time fee</small></h1>
+            <%= form_tag charges_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+              <label class="amount">
+      <span>Amount: $5.00</span>
+    </label>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Free access to network</li>
+              <li>Access to Hosts</li>
+              <li>Email support</li>
+              <li>Access to Donors</li>
+            </ul>
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="Coffee Support"
+          data-amount="500"
+          data-locale="auto"></script>
+<% end %>
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+          <div><br><br>
+            <h4 class="my-0 font-weight-normal">One Hour Hacking Time</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">$25 <small class="text-muted">/one time fee</small></h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <%= form_tag charges_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+    <label class="amount">
+      <span>Amount: $25.00</span>
+    </label>
+    <ul class="list-unstyled mt-3 mb-4">
+              <li>Development by <%= link_to "Max", max_path %></li>
+              <li>1 full dev hour spent on atRest</li>
+              <li>Email support</li>
+              <li>'Thank You' sent to your email</li>
+              <li></li>
+            </ul>
+  </article>
+
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="1 hour of atRest dev time"
+          data-amount="2500"
+          data-locale="auto"></script>
+<% end %>
+            </ul>
+            <!-- <button type="button" class="btn btn-lg btn-block btn-primary">Get started</button> -->
+          </div>
+        </div>
+        <div class="card mb-4 box-shadow">
+          <div><br><Br>
+             <%= form_tag charges_path do %>
+  <article>
+    <% if flash[:error].present? %>
+      <div id="error_explanation">
+        <p><%= flash[:error] %></p>
+      </div>
+    <% end %>
+            <h4 class="my-0 font-weight-normal">Three Hours Hacking Time</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">$90 <small class="text-muted">/one time fee</small></h1>
+
+    <label class="amount">
+      <span>Amount: $90.00</span>
+    </label>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>3 full dev hours by  <%= link_to "Max", max_path %></li>
+              <li>Early invite to prototype</li>
+              <li>Email support</li>
+              <li>Custom 'Thank You' Note Sent to Your Email</li>
+            </ul>
+  <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+          data-key="<%= Rails.configuration.stripe[:publishable_key] %>"
+          data-description="3 hour of atRest dev time"
+          data-amount="9000"
+          data-locale="auto"></script>
+<% end %>
+          </div>
+        </div>
+      </div>
+  </div>    <
+</body>
