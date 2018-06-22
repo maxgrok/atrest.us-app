@@ -2,5 +2,6 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :charges
   root 'charges#index'
-  get '/max' => 'charges#max'
+  get "max" => "max#index"
+  resources :max
 end
